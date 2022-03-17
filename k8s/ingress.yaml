@@ -3,12 +3,14 @@ kind: Ingress
 metadata:
   name: angelcare-net-route
   namespace: angelcare-net
+  annotations:
+    kubernetes.io/ingress.class: traefik
 spec:
   rules:
-    - host: "angelcare-net"
+    - host: "radio.angelcare.net"
       http:
         paths:
-          - path: /
+          - path: /wamp
             pathType: Prefix
             backend:
               service:

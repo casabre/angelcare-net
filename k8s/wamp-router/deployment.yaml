@@ -21,7 +21,7 @@ spec:
           name: wamp-router
           ports:
             - containerPort: 8080
-            - containerPort: 8043
+            - containerPort: 8443
           volumeMounts:
             - name: configuration
               mountPath: /node/config.json
