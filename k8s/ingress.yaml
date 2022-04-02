@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: angelcare-net-route
+  namespace: angelcare-net
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+    - host: "radio.angelcare.net"
+      http:
+        paths:
+          - path: /wamp
+            pathType: Prefix
+            backend:
+              service:
+                name: wamp-router
+                port:
+                  number: 80

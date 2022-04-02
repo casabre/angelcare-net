@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    angelcare-net: wamp-router
+  name: wamp-router
+  namespace: angelcare-net
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      angelcare-net: wamp-router
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        angelcare-net: wamp-router
+    spec:
+      containers:
+        - image: docker.io/crossbario/crossbar-aarch64
+          name: wamp-router
+          ports:
+            - containerPort: 8080
+            - containerPort: 8443
+          volumeMounts:
+            - name: configuration
+              mountPath: /node/config.json
+              subPath: config.json
+          resources: {}
+      volumes:
+        - name: configuration
+          configMap:
+            name: wamp-router
+      restartPolicy: Always
+
+status: {}

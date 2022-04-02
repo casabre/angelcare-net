@@ -1,0 +1,16 @@
+version: "3"
+
+networks:
+  angelcare-net:
+
+services:
+  router:
+    container_name: wamp-router
+    image: docker.io/crossbario/crossbar-aarch64
+    volumes:
+      - ../crossbar/config.json:/node/config.json
+    ports:
+      - 8080:8080
+      - 8043:443
+    networks:
+      - angelcare-net
