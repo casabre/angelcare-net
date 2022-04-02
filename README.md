@@ -1,6 +1,6 @@
-# Angelcare Net
+# Angelradio Net
 
-Complete service infrastructure in order to monitor analogue Angelcare baby monitors. In the end, the monitor should work with all analogue monitors as long as the radio frequency parameter are known.
+Complete service infrastructure in order to monitor analogue baby monitors. In the end, the monitor should work with all analogue monitors as long as the radio frequency parameter are known.
 
 ## Purpose
 
